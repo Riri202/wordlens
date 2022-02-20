@@ -13,7 +13,7 @@
  
 </head>
 <body>
-    <nav class="flex justify-between items-center py-4 border-b-2 border-b-nav_border w-full">
+    <nav class="flex justify-between items-center py-4 border-b-2 border-b-border w-full">
         <div class="pl-16 flex flex-col">
             <img src="/src/assets/border_top.png" alt="border_top">
             <p class="font-['Roboto'] text-2xl tracking-wide">Wordlens</p>
@@ -21,13 +21,34 @@
         <img src="/src/assets/gear_icon.png" alt="gear_icon" class="pr-16">     
     </nav>
 
-    <div class="container mx-auto my-10">
+    <div class="container my-10 mx-auto flex flex-col justify-center ">
         <header>
-            <h1 class="text-8xl font-semibold">Search <br> for any word.</h1>
+            <h1 class="text-8xl font-semibold text-darkblue w-3/5 ">Search <br> for any word.</h1>
         </header>
-        <form>
-            <input type="text" name="word_search" id="word placeholder='What would you like to search for?' ">
-        </form>
+
+        <!-- Search input area -->
+        <div class="mt-6">
+            <form action="">
+                <div class="relative flex items-center text-grey focus-within:text-black w-11/12 ring-1 ring-border focus-within:ring-black px-1 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute ml-3 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    
+                    <input 
+                        type="text" 
+                        name="word" id="word" 
+                        placeholder="What would you like to search for?" 
+                        class="flex grow pr-3 pl-10 outline-none"
+                    >
+                    <button class="bg-black py-3 px-7 rounded-md ">
+                        <p class="text-white">Search</p>
+                    </button>
+                </div>   
+            </form>
+        </div>
+
+       <!-- Result display area -->
+
         
     </div>
     

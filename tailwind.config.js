@@ -4,9 +4,10 @@ module.exports = {
     colors: {
       'darkblue': '#0B0A1B',
       'black': '#000000',
-      'nav_border': '#E9ECF0',
+      'border': '#E9ECF0',
       'grey': '#8C98AD',
-      'lightblue' : '#91A2CB'
+      'lightblue' : '#91A2CB',
+      'white': '#ffffff'
       
     },
     fontFamily: {

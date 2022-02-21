@@ -22,13 +22,13 @@
     </nav>
 
     <div class="container my-10 mx-auto flex flex-col justify-center ">
-        <header>
-            <h1 class="text-8xl font-semibold text-darkblue w-3/5 ">Search <br> for any word.</h1>
+        <header class="flex flex-row  items-center" >
+            <h1 class="flex self-start ml-11 text-8xl font-semibold text-darkblue w-3/5 ">Search <br> for any word.</h1>
         </header>
 
         <!-- Search input area -->
         <div class="mt-6">
-            <form action="">
+            <form action="" class="flex flex-row justify-center items-center" >
                 <div class="relative flex items-center text-grey focus-within:text-black w-11/12 ring-1 ring-border focus-within:ring-black px-1 py-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute ml-3 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -36,23 +36,51 @@
                     
                     <input 
                         type="text" 
-                        name="word" id="word" 
+                        name="word" id="input" 
                         placeholder="What would you like to search for?" 
                         class="flex grow pr-3 pl-10 outline-none"
                     >
-                    <button class="bg-black py-3 px-7 rounded-md ">
+                    <button id="search" class="bg-black py-3 px-7 rounded-md ">
                         <p class="text-white">Search</p>
                     </button>
                 </div>   
             </form>
         </div>
 
-       <!-- Result display area -->
+       <!-- Skeleton Loader -->
+        <div id="infoSkeleton" class="hidden w-11/12 mx-auto mt-20">
+            <div class="flex animate-pulse flex-col  justify-center space-y-5">
+                <div class="w-3/12 bg-grey h-6"></div>
+                <div class="w-1/6 bg-grey h-4"></div>
+                <div class="w-4/5 bg-grey h-3"></div>
+                <div class="bg-sk-bg space-y-5 p-10">
+                    <div class="space-y-5 mb-16" >
+                        <div class="w-4/5 bg-grey h-3"></div> 
+                        <div class="w-1/6 bg-grey h-2"></div> 
+                        <div class="w-3/12 bg-grey h-4"></div>
+                    </div>
+                    <div class="space-y-5">
+                        <div class="w-4/5 bg-grey h-3"></div> 
+                        <div class="w-1/6 bg-grey h-2"></div> 
+                        <div class="w-3/12 bg-grey h-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result display area -->
+        <div class="mx-auto flex flex-col justify-center items-center border outline-none mt-20 border-border p-10 w-11/12">
+            <div class="flex self-start">
+                <h2 id="infoWord" class="text-4xl text-black font-semibold"></h2>
+            </div>
+           
+        </div>
 
         
     </div>
     
 
-  
+    <script src="./index.js"></script>   
 </body>
+
 </html>

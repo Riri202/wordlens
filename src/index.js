@@ -16,6 +16,7 @@ var infoWord = document.getElementById("infoWord")
         infoSkeleton.classList.add('hidden')       
       
        displayData(data, word);
+       
         
     } catch (error) {
         console.log(error);
@@ -30,8 +31,8 @@ var infoWord = document.getElementById("infoWord")
 
              // Event Listeners
     input.addEventListener('keyup', e => {
-        if (e.key === 'enter' && input.target.value) {
-            fetchApi(input.target.value);
+        if (e.key === 'enter' && e.target.value) {
+            fetchApi(e.target.value);
         }
     });
     searchBtn.addEventListener('click', fetchApi());

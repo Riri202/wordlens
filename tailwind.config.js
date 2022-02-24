@@ -8,7 +8,8 @@ module.exports = {
       'grey': '#8C98AD',
       'sk-bg': '#F6F7FA',
       'lightblue' : '#91A2CB',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'footer': '#E5E5E5'
       
     },
     fontFamily: {

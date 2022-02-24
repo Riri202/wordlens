@@ -7,6 +7,8 @@ var example = document.getElementById("example")
 var synonym = document.getElementById("synonym")
 var dataDisplay = document.getElementById("data_display")
 var phoneticPara = document.getElementById("phoneticPara")
+var toggleBtn = document.getElementById("toggleBtn")
+var body = document.getElementById("body")
 
 
 
@@ -28,6 +30,11 @@ var phoneticPara = document.getElementById("phoneticPara")
     } catch (error) {
         console.log(error);
     }}
+
+// Toggle light and dark
+toggleBtn.addEventListener('click', function () {
+        body.classList.toggle('dark');
+    })    
 
 //display data on page////
  function displayData(data, word) {

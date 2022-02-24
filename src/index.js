@@ -9,27 +9,30 @@ var dataDisplay = document.getElementById("data_display")
 var phoneticPara = document.getElementById("phoneticPara")
 var toggleBtn = document.getElementById("toggleBtn")
 var body = document.getElementById("body")
+var error = document.getElementById("error")
+var audio = document.getElementById("audio")
+var audioBtn = document.getElementById("audioBtn")
+var phoneticPara = document.getElementById("phoneticPara")
 
 
 
 
-            // Functions///
+            
     //API consumption
- async function fetchApi(word) {
-     infoSkeleton.classList.remove('hidden')
-     dataDisplay.style.display = 'none'
-    try {
-        let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`; 
-        const res = await fetch(url);
-        const data = await res.json();
-        infoSkeleton.classList.add('hidden')
-        dataDisplay.style.display = 'block'               
-            displayData(data, word);
-           
-        
-    } catch (error) {
-        console.log(error);
-    }}
+async function fetchApi(word) {
+    infoSkeleton.classList.remove('hidden')
+    dataDisplay.classList.add('hidden')
+   try {
+       let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`; 
+       const res = await fetch(url);
+       const data = await res.json();
+       infoSkeleton.classList.add('hidden')
+       data[0].word === 'undefined' ? dataDisplay.classList.add('hidden') : dataDisplay.classList.remove('hidden')     
+           displayData(data, word);
+
+   } catch (error) {
+       console.log(error);
+   }}
 
 // Toggle light and dark
 toggleBtn.addEventListener('click', function () {
@@ -40,9 +43,20 @@ toggleBtn.addEventListener('click', function () {
  function displayData(data, word) {
     console.log(data);
     infoWord.innerText = `${word}`;
-    //display phonetic symbol
-    // const phonetic = data[0].phonetic
-    // phoneticPara.innerHTML = phonetic;
+    phoneticPara.innerText =`${data[0].phonetic}`
+    
+     //play phonetics audio
+    let getPhoneticAudio = data[0]?.phonetics.find((item, index) => {
+        if (item.audio?.length > 0) return true
+      })
+      audio.setAttribute('src', getPhoneticAudio.audio)
+      function playAudio() {
+        audio.play()
+      }
+      audioBtn.addEventListener('click', playAudio)
+    
+      
+    
      //display meanings
     const meanings = data[0].meanings[0].definitions;
     let meaningList = ``;
@@ -51,15 +65,18 @@ toggleBtn.addEventListener('click', function () {
       
       definition.innerText = meaningList
       });
-    //display examples
-    let exampleList = ``;
-    meanings.forEach((meaning) => {
-        exampleList += `${meaning.example} \n`;
-        example.innerText = exampleList
-        });
 
- 
+    // //display examples
+    // let exampleList = ``;
+    // meanings.forEach((meaning) => {
+    //     exampleList += `${meaning.example} \n`;
+    //     example.innerText = exampleList
+    //     });
  } 
+
+
+
+
 
            // Event Listeners 
     input.addEventListener('keyup', async (e) => {

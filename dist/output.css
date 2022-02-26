@@ -510,6 +510,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
+.m-auto {
+  margin: auto;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -548,6 +556,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+
 .block {
   display: block;
 }
@@ -578,6 +598,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-5 {
   height: 1.25rem;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .w-full {
@@ -614,6 +638,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-5 {
   width: 1.25rem;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .grow {
@@ -691,8 +719,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 .self-start {
   align-self: flex-start;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded-md {
@@ -760,8 +810,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
+.fill-grey {
+  fill: #8C98AD;
+}
+
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .py-4 {
@@ -815,6 +877,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 2.5rem;
 }
 
+.pr-20 {
+  padding-right: 5rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
 .font-\[\'Roboto\'\] {
   font-family: 'Roboto';
 }
@@ -836,6 +910,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-9xl {
   font-size: 8rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -965,5 +1054,60 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:focus-within\:ring-lightblue:focus-within {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(145 162 203 / var(--tw-ring-opacity));
+}
+
+@media (min-width: 640px) {
+  .sm\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:grow {
+    flex-grow: 1;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .md\:self-start {
+    align-self: flex-start;
+  }
+
+  .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .md\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .md\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
 }
 

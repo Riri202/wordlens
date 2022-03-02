@@ -28,7 +28,7 @@ async function fetchApi(word) {
        const res = await fetch(url);
        const data = await res.json();
        infoSkeleton.classList.add('hidden')
-       data[0].word === 'undefined' ? dataDisplay.classList.add('hidden') : dataDisplay.classList.remove('hidden')     
+       data[0].word === undefined ? dataDisplay.classList.add('hidden') : dataDisplay.classList.remove('hidden')     
            displayData(data, word);
 
    } catch (error) {

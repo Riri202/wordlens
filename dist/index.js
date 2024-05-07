@@ -63,7 +63,6 @@ toggleBtn.addEventListener('click', function () {
            audioBtn.addEventListener('click', playAudio)
          
           
-   ///////////// Copyright (C) 2022 Bakare Abiola https://github.com/iamstarcode ///////////////
           //display meanings
           const meanings = data[0].meanings;
           let meaningList = ''
